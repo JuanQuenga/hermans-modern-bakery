@@ -21,9 +21,7 @@ const Layout = ({ children }: any) => {
       </Head>
 
       <Navbar />
-      <main id="#main-content" className="pt-20 md:pt-0">
-        {children}
-      </main>
+      <main id="#main-content">{children}</main>
       <Footer />
     </>
   );

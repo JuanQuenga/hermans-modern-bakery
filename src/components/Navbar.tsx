@@ -1,10 +1,12 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
 import Logo from "./Logo";
+import cn from "classnames";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const links: { destination: string; name: string }[] = [
     { destination: "/specials", name: "Cafe" },
@@ -13,8 +15,34 @@ const Navbar = () => {
     { destination: "/about", name: "About" },
   ];
 
+  useEffect(() => {
+    window.addEventListener("scroll", colorNavbar);
+
+    return () => {
+      window.removeEventListener("scroll", colorNavbar);
+    };
+  });
+
+  const colorNavbar = () => {
+    if (window !== undefined) {
+      const windowHeight = window.scrollY;
+      if (windowHeight >= 100 && !scrolled) {
+        console.log("scrolled");
+        setScrolled(true);
+      } else if (windowHeight < 100 && scrolled) {
+        console.log("not scrolled");
+        setScrolled(false);
+      }
+    }
+  };
+
   return (
-    <nav className="px-2 sm:px-4 py-2.5 mb-6 fixed md:relative w-full bg-main md:bg-transparent">
+    <nav
+      className={cn(
+        "px-2 sm:px-4 py-2.5 mb-6 fixed w-full bg-gradient-to-b from-black to-transparent",
+        { scrolled: "bg-[rgba(0,0,0,0.8)]" }
+      )}
+    >
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <div className="mr-4">
           <Link href="/">

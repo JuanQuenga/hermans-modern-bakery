@@ -8,10 +8,30 @@ const Home: NextPage = () => {
         <title>Herman's Modern Bakery | Home</title>
       </Head>
 
-      <section className="container flex mx-auto">
-        <div className="flex font-custom text-6xl md:text-8xl uppercase text-white font-bold">
-          Saipan's First and Finest
+      <section className="header-section flex justify-center min-h-[800px]">
+        <div className="w-full bg-gradient-to-b from-[rgba(0,0,0,0.6)] via-[rgba(0,0,0,0.2)] to-transparent pt-[6rem] md:pt-[9rem]">
+          <div className="container mx-auto flex font-custom text-6xl md:text-8xl uppercase text-white font-bold ">
+            Saipan's First and Finest
+          </div>
         </div>
+      </section>
+      <section className="container mx-auto flex justify-center bg-stone-500 min-h-[500px] mt-[50px]">
+        <p>
+          4PVJ+453, 500002 Tun Herman Pan Rd., Dan Dan, Saipan 96950, Northern
+          Mariana Islands
+        </p>
+      </section>
+      <section className="container mx-auto flex justify-center bg-white min-h-[500px]">
+        <p>
+          4PVJ+453, 500002 Tun Herman Pan Rd., Dan Dan, Saipan 96950, Northern
+          Mariana Islands
+        </p>
+      </section>
+      <section className="container mx-auto flex justify-center bg-white min-h-[500px]">
+        <p>
+          4PVJ+453, 500002 Tun Herman Pan Rd., Dan Dan, Saipan 96950, Northern
+          Mariana Islands
+        </p>
       </section>
     </>
   );
